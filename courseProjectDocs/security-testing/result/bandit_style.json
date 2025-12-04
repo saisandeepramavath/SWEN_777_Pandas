@@ -1,0 +1,114 @@
+{
+  "errors": [],
+  "generated_at": "2025-12-04T01:35:13Z",
+  "metrics": {
+    "./pandas/io/formats/style.py": {
+      "CONFIDENCE.HIGH": 4,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 3,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 3685,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 4,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 3,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 3685,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "3815         class MyStyler(cls):  # type: ignore[valid-type,misc]\n3816             env = jinja2.Environment(loader=loader)\n3817             if html_table:\n",
+      "col_offset": 18,
+      "end_col_offset": 51,
+      "filename": "./pandas/io/formats/style.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 94,
+        "link": "https://cwe.mitre.org/data/definitions/94.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.",
+      "line_number": 3816,
+      "line_range": [
+        3816
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b701_jinja2_autoescape_false.html",
+      "test_id": "B701",
+      "test_name": "jinja2_autoescape_false"
+    },
+    {
+      "code": "4006         arg = np.asarray(arg, **dtype)\n4007         assert isinstance(arg, np.ndarray)  # mypy requirement\n4008         if arg.shape != data.shape:  # check valid input\n",
+      "col_offset": 8,
+      "end_col_offset": 42,
+      "filename": "./pandas/io/formats/style.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 4007,
+      "line_range": [
+        4007
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "4261             color = color[0] if x < 0 else color[1]\n4262         assert isinstance(color, str)  # mypy redefinition\n4263 \n",
+      "col_offset": 8,
+      "end_col_offset": 37,
+      "filename": "./pandas/io/formats/style.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 4262,
+      "line_range": [
+        4262
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "4346 \n4347     assert isinstance(align, str)  # mypy: should now be in [left, right, mid, zero]\n4348     if data.ndim == 1:\n",
+      "col_offset": 4,
+      "end_col_offset": 33,
+      "filename": "./pandas/io/formats/style.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 4347,
+      "line_range": [
+        4347
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    }
+  ]
+}
