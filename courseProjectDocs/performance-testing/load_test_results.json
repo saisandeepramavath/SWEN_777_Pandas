@@ -1,0 +1,38 @@
+{
+  "test_type": "Load Test",
+  "owner": "Sandeep Ramavath",
+  "configuration": {
+    "concurrent_users": 50,
+    "duration_seconds": 60,
+    "operations_per_user": 20,
+    "dataset_size": 10000
+  },
+  "execution": {
+    "total_duration": 6.133098125457764,
+    "total_operations": 1000,
+    "successful_operations": 1000,
+    "failed_operations": 0,
+    "success_rate": 100.0
+  },
+  "metrics": {
+    "response_time": {
+      "mean": 0.03235423636436462,
+      "median": 0.025191068649291992,
+      "p95": 0.0839879035949707,
+      "p99": 0.1286308217048645,
+      "min": 0.003982067108154297,
+      "max": 0.2309880256652832
+    },
+    "throughput": 163.04973107296595,
+    "cpu_usage": {
+      "average": 39.239999999999995,
+      "peak": 100.0
+    },
+    "memory_usage_mb": {
+      "average": 115.303125,
+      "peak": 116.84375
+    }
+  },
+  "findings": [],
+  "timestamp": "2025-12-08T19:44:59.733994"
+}
