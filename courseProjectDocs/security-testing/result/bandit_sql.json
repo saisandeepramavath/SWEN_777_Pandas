@@ -1,0 +1,242 @@
+{
+  "errors": [],
+  "generated_at": "2025-12-04T01:35:06Z",
+  "metrics": {
+    "./pandas/io/sql.py": {
+      "CONFIDENCE.HIGH": 4,
+      "CONFIDENCE.LOW": 5,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 4,
+      "SEVERITY.MEDIUM": 6,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 2481,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 4,
+      "CONFIDENCE.LOW": 5,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 4,
+      "SEVERITY.MEDIUM": 6,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 2481,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "348         dtype_backend = \"numpy\"  # type: ignore[assignment]\n349     assert dtype_backend is not lib.no_default\n350 \n",
+      "col_offset": 4,
+      "end_col_offset": 46,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 349,
+      "line_range": [
+        349
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "492         dtype_backend = \"numpy\"  # type: ignore[assignment]\n493     assert dtype_backend is not lib.no_default\n494 \n",
+      "col_offset": 4,
+      "end_col_offset": 46,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 493,
+      "line_range": [
+        493
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "696         dtype_backend = \"numpy\"  # type: ignore[assignment]\n697     assert dtype_backend is not lib.no_default\n698 \n",
+      "col_offset": 4,
+      "end_col_offset": 46,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 697,
+      "line_range": [
+        697
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "1071 \n1072             assert isinstance(d, np.ndarray), type(d)\n1073 \n",
+      "col_offset": 12,
+      "end_col_offset": 53,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 1072,
+      "line_range": [
+        1072
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    },
+    {
+      "code": "2242         if schema:\n2243             stmt = f\"SELECT {select_list} FROM {schema}.{table_name}\"\n2244         else:\n",
+      "col_offset": 19,
+      "end_col_offset": 69,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2243,
+      "line_range": [
+        2243
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "2244         else:\n2245             stmt = f\"SELECT {select_list} FROM {table_name}\"\n2246 \n",
+      "col_offset": 19,
+      "end_col_offset": 60,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2245,
+      "line_range": [
+        2245
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "2452         if self.has_table(name, schema):\n2453             self.execute(f\"DELETE FROM {table_name}\").close()\n2454 \n",
+      "col_offset": 25,
+      "end_col_offset": 52,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2453,
+      "line_range": [
+        2453
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "2567         insert_statement = (\n2568             f\"INSERT INTO {escape(self.name)} ({col_names}) VALUES {wildcards}\"\n2569         )\n",
+      "col_offset": 12,
+      "end_col_offset": 79,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2568,
+      "line_range": [
+        2568
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "2889         wld = \"?\"\n2890         query = f\"\"\"\n2891         SELECT\n2892             name\n2893         FROM\n2894             sqlite_master\n2895         WHERE\n2896             type IN ('table', 'view')\n2897             AND name={wld};\n2898         \"\"\"\n2899 \n",
+      "col_offset": 16,
+      "end_col_offset": 11,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2890,
+      "line_range": [
+        2890,
+        2891,
+        2892,
+        2893,
+        2894,
+        2895,
+        2896,
+        2897,
+        2898
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    },
+    {
+      "code": "2909     def delete_rows(self, name: str, schema: str | None = None) -> None:\n2910         delete_sql = f\"DELETE FROM {_get_valid_sqlite_name(name)}\"\n2911         if self.has_table(name, schema):\n",
+      "col_offset": 21,
+      "end_col_offset": 66,
+      "filename": "./pandas/io/sql.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 89,
+        "link": "https://cwe.mitre.org/data/definitions/89.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible SQL injection vector through string-based query construction.",
+      "line_number": 2910,
+      "line_range": [
+        2910
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.2/plugins/b608_hardcoded_sql_expressions.html",
+      "test_id": "B608",
+      "test_name": "hardcoded_sql_expressions"
+    }
+  ]
+}
