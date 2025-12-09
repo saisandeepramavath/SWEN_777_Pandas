@@ -1,0 +1,92 @@
+{
+  "test_type": "Stress Test",
+  "owner": "Nithikesh Reddy",
+  "configuration": {
+    "initial_users": 5,
+    "max_users": 40,
+    "user_increment": 5,
+    "dataset_size_range": [
+      10000,
+      50000
+    ],
+    "operations_per_user": 10
+  },
+  "execution": {
+    "total_duration": 902.2269229888916,
+    "stress_levels_tested": 2,
+    "breaking_point": 10
+  },
+  "level_metrics": [
+    {
+      "num_users": 5,
+      "dataset_size": 10000,
+      "duration": 110.97116422653198,
+      "total_operations": 50,
+      "successful": 50,
+      "errors": 0,
+      "error_rate": 0.0,
+      "response_time": {
+        "mean": 10.451361083984375,
+        "median": 10.325967907905579,
+        "p95": 12.327000427246093,
+        "max": 13.251962184906006
+      },
+      "throughput": 0.45056749966083126,
+      "cpu": {
+        "avg": 81.5,
+        "peak": 100.0
+      },
+      "memory": {
+        "avg": 4363.875,
+        "peak": 5388.078125
+      }
+    },
+    {
+      "num_users": 10,
+      "dataset_size": 15714,
+      "duration": 789.2299900054932,
+      "total_operations": 100,
+      "successful": 100,
+      "errors": 0,
+      "error_rate": 0.0,
+      "response_time": {
+        "mean": 74.62792554140091,
+        "median": 67.47234547138214,
+        "p95": 142.92504839897154,
+        "max": 155.76275992393494
+      },
+      "throughput": 0.1267057781209049,
+      "cpu": {
+        "avg": 86.60000000000001,
+        "peak": 100.0
+      },
+      "memory": {
+        "avg": 5537.257102272727,
+        "peak": 8284.109375
+      }
+    }
+  ],
+  "findings": [
+    {
+      "finding": "System breaking point identified",
+      "details": "System fails at 10 concurrent users with dataset sizes up to 50,000 rows",
+      "severity": "HIGH"
+    },
+    {
+      "finding": "Performance cliff detected",
+      "details": "Response time jumped 7.14x when increasing from 5 to 10 users",
+      "severity": "HIGH"
+    },
+    {
+      "finding": "Excessive memory growth under stress",
+      "details": "Memory usage increased by 3920.23 MB from baseline to peak load",
+      "severity": "HIGH"
+    },
+    {
+      "finding": "CPU saturation reached",
+      "details": "CPU utilization peaked at 100.0% under maximum stress",
+      "severity": "MEDIUM"
+    }
+  ],
+  "timestamp": "2025-12-08T20:02:09.515165"
+}
